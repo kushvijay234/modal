@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #open-modal {
+        background-color: greenyellow;
+        padding: 10px;
+        border: none;
+        display: flex;
+        width: 30vh;
+        justify-content: center;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      #modal-1 {
+        margin-top: 30px;
+        position: fixed;
+        top: 30%;
+        left: 50%;
+        transform: translate(-40%, -40%);
+        z-index: 1000;
+        background-color: white;
+        width: 60vh;
+      }
+      #modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 999;
+      }
+      .modal-container {
+        padding: 10px;
+        color: white;
+      }
+      .modal-header {
+        background-image: url("https://media.istockphoto.com/id/1364883668/photo/abstract-modern-background-in-blue-and-white-contemporary-triangle-and-polygonal-shapes.jpg?b=1&s=170667a&w=0&k=20&c=yKm-T6Qsa_kGcbeIwveR9-I4jJHA6PxjdHbGuUlqaYY=");
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Button for opening Modal -->
+    <button id="open-modal" onclick="openModal()">Open Modal</button>
+
+    <!-- Modal Body  -->
+    <div id="modal-1">
+      <div class="modal-container">
+        <button id="close-modal" onclick="closeModal()">Close</button>
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1>Modal Header Here</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="modal-overlay"></div>
+
+    <!-- Script file  -->
+    <script>
+      const modal = document.getElementById("modal-1");
+      const overlay = document.getElementById("modal-overlay");
+      function openModal() {
+        modal.style.display = "block";
+        overlay.style.display = "block";
+      }
+      function closeModal() {
+        modal.style.display = "none";
+        overlay.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
